@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Predict the next word.</title>
+		<link rel="stylesheet" href="../static/myapp/style2.css" />
+	</head>
+	<body>
+	</body>
+	<header>
+		<a herf="#" class="logo"><span>P</span>redict</a>
+	</header>
+	<section class="predict" id="predict">
+		<h1 class="heading">
+			<span>p</span>
+			<span>r</span>
+			<span>e</span>
+			<span>d</span>
+			<span>i</span>
+			<span>c</span>
+			<span>t</span>
+			<span class="space"></span>
+			<span>t</span>
+			<span>h</span>
+			<span>e</span>
+			<span class="space"></span>
+			<span>n</span>
+			<span>e</span>
+			<span>x</span>
+			<span>t</span>
+			<span class="space"></span>
+			<span>w</span>
+			<span>o</span>
+			<span>r</span>
+			<span>d</span>
+		</h1>
+		<div class="row">
+			<form method="post" action={% url 'guess' %} enctype="multipart/form-data"> {% csrf_token %}
+				<div class="inputBox">
+					<h3>Sentence</h3>
+					<input type="text" name="sentence">
+				</div>
+				<!--<button class="search-btn" type="button">Run Moudle</button>-->
+                <input type="submit" value="Guess" class="search-btn">
+			</form>
+		</div>
+		<div class="row">
+			<div class="outputBox">
+				<h3>Moudle Output</h3>
+			</div>
+			<form action="">
+				<div class="inputBox">
+					<h3>Predict</h3>
+					<!--<input type="text">-->
+                    <textarea rows="3" cols="30" readonly="true">{{ res }}</textarea>
+				</div>
+			</form>
+		</div>
+	</section>
+</html>

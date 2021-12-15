@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程猜词器</title>
+</head>
+<body>
+    <h1>NLP课程设计猜词器</h1>
+    <form method="post" action={% url 'guess' %} enctype="multipart/form-data"> {% csrf_token %}
+        需要输入的句子为:<input type="text" name="sentence"><br>
+        <input type="submit" value="Guess">
+    </form>
+    <textarea rows="3" cols="30" readonly="true">{{ res }}</textarea>
+</body>
+</html>
